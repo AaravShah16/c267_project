@@ -18,7 +18,7 @@ def upload_image():
     #write the code from here
     image_file = request.files['file']
     filename = secure_filename(image_file.filename)
-    image_file.save(os.path.join('static/', 'filename'))
+    image_file.save(os.path.join('static/', filename))
     image = Image.open(image_file)
     image_flip = image.transpose(Image.FLIP_LEFT_RIGHT)
     image_flip.save(os.path.join('static/', 'flip.jpg'))
